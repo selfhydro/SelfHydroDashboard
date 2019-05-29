@@ -4,13 +4,13 @@ services:
     image: mosquitto
     restart: on-failure
     ports:
-      - "1883"
+      - "1883:1883"
     volumes:
       - mosquittoData:/var/lib/mosquitto/
   grafana:
     image: grafana/grafana
     ports:
-      - "3000"
+      - "3000:3000"
     restart: always
     links:
       - influxdb
