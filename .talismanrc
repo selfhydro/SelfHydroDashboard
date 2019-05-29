@@ -1,4 +1,4 @@
 fileignoreconfig:
 - filename: go.sum
-  checksum: f39f390c1c41fc1362f93baa856152dad688a2b7da874e9d1176b3624c55077d
+  checksum: 7cb0449c65d84005180ca24fd9e6c02f2e6e98f6f7c116f8655a6ce8297de85b
   ignore_detectors: []

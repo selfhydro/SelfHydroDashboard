@@ -39,7 +39,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	localMQTT := mqtt.NewLocalMQTT("influxdb-ingester")
+	localMQTT := mqtt.NewLocalMQTT("influxdb-ingester", "mosquitto:1883")
 	localMQTT.ConnectDevice()
 
 	waterTemp := &sensors.WaterTemperature{}
