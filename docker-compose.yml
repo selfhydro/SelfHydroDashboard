@@ -1,5 +1,13 @@
 version: "3.7"
 services:
+  mosquitto:
+    image: mosquitto
+    container: mosquitto
+    restart: on-failure
+    ports:
+      - "1883"
+    volumes:
+      mosquittoData:/var/lib/mosquitto/
   grafana:
     image: grafana/grafana
     ports:
