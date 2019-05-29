@@ -4,6 +4,7 @@ services:
     image: grafana/grafana
     ports:
       - "3000"
+    restart: always
     links:
       - influxdb
     volumes:
@@ -13,6 +14,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
   influxdb:
     image: influxdb:latest
     container_name: influxdb
@@ -20,6 +22,7 @@ services:
       - "8083:8083"
       - "8086:8086"
       - "8090:8090"
+    restart: always
     volumes:
       - influxdbData:/var/lib/influxdb
 volumes:
