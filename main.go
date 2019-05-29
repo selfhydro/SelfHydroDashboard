@@ -23,7 +23,7 @@ type SeflhydroState struct {
 func main() {
 	// Create a new HTTPClient
 	c, err := client.NewHTTPClient(client.HTTPConfig{
-		Addr: "http://localhost:8086",
+		Addr: "http://influxdb:8086",
 	})
 	if err != nil {
 		log.Fatal(err)
