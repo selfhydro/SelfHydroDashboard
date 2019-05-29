@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000"
+    links:
+      - influxdb
+    volumes:
+      - grafanaData:/var/lib/grafana
+  indluxdbStateSubscriber:
+    image: influxdb-subscriber
+    build:
+      context: .
+      dockerfile: Dockerfile
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      - "8090:8090"
+    volumes:
+      - influxdbData:/var/lib/influxdb
+volumes:
+  influxdbData:
+  grafanaData:

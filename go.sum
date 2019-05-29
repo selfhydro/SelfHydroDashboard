@@ -13,6 +13,10 @@ github.com/selfhydro/selfhydro v0.0.25 h1:Glre865B4RbX94mWEERG2hARnd2eC+wYWfJx0P
 github.com/selfhydro/selfhydro v0.0.25/go.mod h1:GqoRx2h7Il/r+ztRmyJwMpFOjpyZPA+oADyw0RAFkgI=
 github.com/selfhydro/selfhydro v0.0.26-0.20190508030330-b764109375d2 h1:qhvjfCt7V12A5mxCR5UZA1Nl6y9HVCyNG+msVU3ERro=
 github.com/selfhydro/selfhydro v0.0.26-0.20190508030330-b764109375d2/go.mod h1:TYsBHMHgA7fvMB7QBUd8JjmLk0J3Uv4B21P2X2gRRII=
+github.com/selfhydro/selfhydro v0.0.26-0.20190523091315-e62bbba9d577 h1:+Zk8XqZgOk4WNsgacMQaKOR8zp5+jHHFKSsF6avdxFA=
+github.com/selfhydro/selfhydro v0.0.26-0.20190523091315-e62bbba9d577/go.mod h1:TYsBHMHgA7fvMB7QBUd8JjmLk0J3Uv4B21P2X2gRRII=
+github.com/selfhydro/selfhydro v0.0.26-0.20190528050048-61c40e1f56d4 h1:TT+3HqE90JxoNI917uagJqtYN3LUR/OP+oZOi1ynOR4=
+github.com/selfhydro/selfhydro v0.0.26-0.20190528050048-61c40e1f56d4/go.mod h1:TYsBHMHgA7fvMB7QBUd8JjmLk0J3Uv4B21P2X2gRRII=
 github.com/stianeikeland/go-rpio v4.2.0+incompatible h1:CUOlIxdJdT+H1obJPsmg8byu7jMSECLfAN9zynm5QGo=
 github.com/stianeikeland/go-rpio v4.2.0+incompatible/go.mod h1:Sh81rdJwD96E2wja2Gd7rrKM+XZ9LrwvN2w4IXrqLR8=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

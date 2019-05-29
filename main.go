@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	client "github.com/influxdata/influxdb/client/v2"
+	client "github.com/influxdata/influxdb1-client/v2"
 	mqtt "github.com/selfhydro/selfhydro/mqtt"
 	"github.com/selfhydro/selfhydro/sensors"
 )
@@ -58,6 +58,7 @@ func main() {
 		currentAmbientHumidity := ambientHumidity.GetLatestData()
 		currentElectricalConductivity := electricalConductivity.GetLatestData()
 		fmt.Println("water temp: ", waterTemperature)
+		fmt.Println("ec level: ", currentElectricalConductivity)
 
 		tags := map[string]string{"device": "selfhydro"}
 		temperatureFields := map[string]interface{}{
