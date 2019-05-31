@@ -16,6 +16,19 @@ services:
       - influxdb
     volumes:
       - grafanaData:/var/lib/grafana
+      - ./grafana.ini:/etc/grafana/grafana.ini
+    networks:
+      - nginx_network
+  nginx:
+    image: nginx
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - nginx_network
   indluxdbStateSubscriber:
     image: influxdb-subscriber
     build:
@@ -24,6 +37,7 @@ services:
     restart: always
     links:
       - mosquitto
+      - influxdb
   influxdb:
     image: influxdb:latest
     container_name: influxdb
@@ -38,3 +52,6 @@ volumes:
   influxdbData:
   grafanaData:
   mosquittoData:
+
+networks:
+  nginx_network:
