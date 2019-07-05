@@ -14,4 +14,4 @@ outputs:
 - name: coverage-results
 
 run:
-  path: SelfHydroDashboard/.ci/unit-test.sh
+  path: SelfHydroDashboard/ci/unit-test.sh
