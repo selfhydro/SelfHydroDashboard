@@ -2,7 +2,7 @@
 
 set -e
 
-cd ./selfhydro
+cd ./SelfHydroDashboard
 go get ./...
 go test -cover ./... | tee test_coverage.txt
 
