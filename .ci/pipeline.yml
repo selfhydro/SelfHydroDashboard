@@ -1,2 +1,44 @@
 ---
-  
+resources:
+- name: SelfHydroDashboard
+  type: git
+  source:
+    uri: https://github.com/selfhydro/StateInfluxDBSubscriber.git
+
+- name: StateInfluxDBSubscriberImage
+  type: docker-image
+  source:
+    email: ((docker-hub.email))
+    username: ((docker-hub.username))
+    password: ((docker-hub.password))
+    repository: ((docker-hub.username))/StateInfluxDBSubscriber
+
+- name: version
+  type: semver
+  source:
+    driver: gcs
+    bucket: selfhydro-versions
+    key: StateInfluxDBSubscriber
+    json-key: ((gcp.system-user-key))
+
+jobs:
+- name: tests
+  plan:
+  - get: SelfHydroDashboard
+    trigger: true
+  - task: unit-test
+    file: StateInfluxDBSubscriber/.ci/unit-test.yml
+
+- name: build
+  plan:
+  - get: version
+    params: {bump: patch}
+  - get: SelfHydroDashboard
+    trigger: true
+    passed: [tests]
+  - put: version
+    params: {file: version/version}
+  - put: StateInfluxDBSubscriberImage
+    params:
+      build: SelfHydroDashboard
+      labels: version/version
