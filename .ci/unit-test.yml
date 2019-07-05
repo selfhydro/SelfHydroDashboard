@@ -8,7 +8,7 @@ image_resource:
     tag: stretch
 
 inputs:
-- name: StateInfluxDBSubscriber
+- name: SelfHydroDashboard
 
 outputs:
 - name: coverage-results

@@ -19,7 +19,7 @@ resources:
     driver: gcs
     bucket: selfhydro-versions
     key: StateInfluxDBSubscriber
-    json-key: ((gcp.system-user-key))
+    json-key: ((gcp.SystemKey))
 
 jobs:
 - name: tests
