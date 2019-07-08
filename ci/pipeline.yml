@@ -19,7 +19,14 @@ resources:
     driver: gcs
     bucket: selfhydro-versions
     key: StateInfluxDBSubscriber
-    json-key: ((gcp.SystemKey))
+    json-key: |
+        {
+          "private_key_id": "((gcs-service_account.private_key_id))",
+          "private_key": "((gcs-service_account.private_key))",
+          "client_email": "((gcs-service_account.client_email))",
+          "client_id": "((gcs-service_account.client_id))",
+          "type": "service_account"
+        }
 
 jobs:
 - name: test
